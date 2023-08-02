@@ -30,7 +30,10 @@ struct ContentView: View {
             List {
                 ForEach(toDoItems) { toDoItem in
                     if toDoItem.isImportant {
-                        Text("!!" + (toDoItem.title ?? "No title"))
+                        Text("!! ")
+                            .foregroundColor(.red)
+                            .bold() +
+                        Text(toDoItem.title ?? "No title")
                     } else {
                         Text(toDoItem.title ?? "No title")
                     }
